@@ -11,7 +11,7 @@ jobs:
       run: echo "Hola Mundo"
 
     - name: touch file
-      run: touh hola.txt
+      run: touch hola.txt
 
     - name: Set text
       run: echo "Hola Mundo 2024!!" >> hola.txt
@@ -25,5 +25,3 @@ jobs:
     steps:
       - name: LS
         run: ls -al
-
-        
