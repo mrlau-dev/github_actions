@@ -7,3 +7,8 @@ person:
     - item4
     
 
+version : 3.8
+services:
+  php: 10.0
+
+
