@@ -10,17 +10,17 @@ jobs:
       - name: SetUp
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrests.KEY_SERVER}}" >> ~/.ssh/id_rsa
+          echo "${{ secrets.KEY_SERVER}}" >> ~/.ssh/id_rsa
           chmod 600 ~/.ssh/id_rsa
           ssh-keyscan -H 20.243.84.17 >> ~/.ssh/known_hosts
 
-      -name: Ls ssh
+      - name: Ls ssh
         run: ssh azureuser@20.243.84.17 "ls -al"
 
-      -name: executing remote ssh commands using password
-       uses: appleboy/ssh-action@v1.0.3
-       if: success()
-       with:
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@v1.0.3
+        if: success()
+        with:
           host: 20.243.84.17
           username: azureuser
           key: ${{ secrets.KEY_SERVER }}
