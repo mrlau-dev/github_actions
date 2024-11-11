@@ -14,11 +14,11 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      MY_VAR: Mi variable de entorno
+      MY_VAR: texto_1
     
     steps:
     - name: Hola
-      run: echo "Valor $MY_VAR"
+      run: echo "Valor ${{ vars.MY_VARIABLE_2}}"
 
     - name: touch file
       run: touch hola.txt
